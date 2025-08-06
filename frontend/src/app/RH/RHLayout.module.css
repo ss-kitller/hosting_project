@@ -1,0 +1,53 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: 0; /* Pas de marge par défaut car sidebar cachée */
+  margin-top: 60px; /* Hauteur du header */
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(120deg, #eaf2fb 0%, #fafdff 100%);
+  transition: margin-left 0.3s ease;
+  position: relative;
+}
+
+.mainContent.shifted {
+  margin-left: 280px; /* Marge quand sidebar ouverte */
+}
+
+.contentWrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mainContent.shifted {
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding: 1.5rem 1rem;
+  }
+  
+  .mainContent.shifted {
+    margin-left: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentWrapper {
+    padding: 1rem 0.8rem;
+  }
+  
+  .mainContent.shifted {
+    margin-left: 260px;
+  }
+} 

@@ -1,0 +1,234 @@
+.pageBg {
+  min-height: 100vh;
+  background: #f7fafd;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.mainCentered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 60px 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #e3e9f1;
+  padding: 36px 32px 32px 32px;
+  max-width: 1100px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #133a6a;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.sectionTitle {
+  color: #1a4fa0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 32px 0 12px 0;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+  justify-content: center;
+}
+
+.addBtn {
+  background: #1a4fa0;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+.addBtn:hover {
+  background: #174080;
+}
+.plusIcon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+  font-weight: 700;
+}
+.refreshBtn {
+  background: #e3e9f1;
+  color: #1a4fa0;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+.refreshBtn:hover {
+  background: #d0d8e6;
+}
+.refreshIcon {
+  font-size: 1.3rem;
+  margin-right: 8px;
+}
+
+.formCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #e3e9f1;
+  padding: 28px 20px 18px 20px;
+  margin-bottom: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.formGrid > div {
+  flex: 1 1 220px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  border: 1px solid #c7d0e0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  margin-top: 4px;
+  background: #f8faff;
+  color: #133a6a;
+}
+.input:focus {
+  outline: 2px solid #1a4fa0;
+}
+.formGrid label {
+  color: #133a6a;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.formActions {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+}
+.cancelBtn {
+  background: #b0b8c1;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+.cancelBtn:hover {
+  background: #8a929a;
+}
+.error {
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.tableWrapper {
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+.table {
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px #e3e9f1;
+}
+.table th {
+  background: #f3f4f6;
+  color: #133a6a;
+  font-weight: 700;
+  padding: 12px 8px;
+  text-align: left;
+  font-size: 1.05rem;
+}
+.table td {
+  padding: 10px 8px;
+  color: #1a4fa0;
+  background: #fff;
+  border-bottom: 1px solid #e3e9f1;
+}
+.deleteBtn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.deleteBtn:hover {
+  background: #c0392b;
+}
+.exportRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem 0;
+}
+.exportRow label {
+  color: #1a4fa0;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.exportSelect {
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #1a4fa0;
+  font-size: 1rem;
+  background: #f8faff;
+  color: #133a6a;
+  font-weight: 600;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.exportSelect:focus {
+  outline: 2px solid #1a4fa0;
+  border-color: #174080;
+  box-shadow: 0 0 0 2px #e3e9f1;
+}
+@media (max-width: 900px) {
+  .mainCentered {
+    padding: 20px 0 40px 0;
+  }
+  .card {
+    padding: 18px 6px 18px 6px;
+  }
+  .formCard {
+    padding: 16px 4px 10px 4px;
+  }
+  .formGrid {
+    gap: 8px;
+  }
+  .table th, .table td {
+    font-size: 0.95rem;
+    padding: 7px 4px;
+  }
+} 

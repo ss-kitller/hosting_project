@@ -1,0 +1,492 @@
+/* Animations graphiques pour l'arrière-plan */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Container principal */
+.loginContainer {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(-45deg, #eaf2fb, #f0f8ff, #e6f3ff, #fafdff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1rem 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 80px; /* Espacement pour éviter le chevauchement avec le header */
+}
+
+/* Particules flottantes */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 91, 170, 0.3);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 0.5s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 1.5s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 2s; }
+
+.loginContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 450px;
+  animation: slideInUp 0.8s ease-out;
+}
+
+.welcomeText {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: slideInUp 0.8s ease-out;
+}
+
+.welcomeTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #003366;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.welcomeSubtitle {
+  font-size: 1.15rem;
+  color: #005baa;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+.loginCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 32, 96, 0.15);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid rgba(0, 91, 170, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  animation: slideInUp 1s ease-out 0.2s both;
+}
+
+.loginCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 80px rgba(0, 32, 96, 0.2);
+}
+
+.loginTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #003366;
+  margin-bottom: 0.5rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 0.01em;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.loginSubtitle {
+  font-size: 1rem;
+  color: #005baa;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+/* Onglets */
+.tabContainer {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+  animation: fadeIn 0.8s ease-out 0.8s both;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.tabButton:hover {
+  color: #005baa;
+  background-color: rgba(0, 91, 170, 0.05);
+}
+
+.tabButton.activeTab {
+  color: #005baa;
+  border-bottom-color: #005baa;
+  background-color: rgba(0, 91, 170, 0.1);
+}
+
+/* Styles pour le formulaire */
+.formGroup {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.8s ease-out 0.8s both;
+}
+
+.formLabel {
+  display: block;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e8f0;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  color: #003366;
+  position: relative;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #005baa;
+  box-shadow: 0 0 0 3px rgba(0, 91, 170, 0.1);
+  transform: translateY(-1px);
+}
+
+.formInput::placeholder {
+  color: #b0b8c1;
+  transition: color 0.3s ease;
+}
+
+.formInput:focus::placeholder {
+  color: #005baa;
+}
+
+/* Messages d'erreur et de succès */
+.errorMessage {
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+  backdrop-filter: blur(5px);
+}
+
+.successMessage {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  text-align: center;
+  animation: successPulse 0.5s ease-in-out;
+  backdrop-filter: blur(5px);
+}
+
+/* Bouton de connexion/inscription */
+.loginButton {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(135deg, #005baa 0%, #003366 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-out 1s both;
+}
+
+.loginButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.loginButton:hover::before {
+  left: 100%;
+}
+
+.loginButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 91, 170, 0.4);
+}
+
+.loginButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.loginButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loginButton:disabled::before {
+  display: none;
+}
+
+/* Spinner de chargement */
+.loadingSpinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+/* Mot de passe oublié */
+.forgotPassword {
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.8s ease-out 1.2s both;
+}
+
+.forgotPasswordLink {
+  background: none;     
+  border: none;         
+  padding: 0;            
+  font: inherit;         
+  color: #005baa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;       
+}
+
+.forgotPasswordLink:hover {
+  color: #003366;
+  text-decoration: underline;
+}
+
+.forgotPasswordLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #005baa;
+  transition: width 0.3s ease;
+}
+
+.forgotPasswordLink:hover::after {
+  width: 100%;
+}
+
+/* Message de sécurité */
+.securityMessage {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #b0b8c1;
+  font-family: "'Segoe UI', 'Arial', sans-serif";
+  animation: fadeIn 0.8s ease-out 1.4s both;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideInUp 0.3s ease-out;
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.modalText {
+  color: #005baa;
+  margin-bottom: 1.5rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  line-height: 1.5;
+}
+
+.modalEmail {
+  color: #005baa;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modalEmail:hover {
+  text-decoration: underline;
+}
+
+.modalButton {
+  background: linear-gradient(135deg, #005baa 0%, #003366 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.modalButton:hover {
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .loginContainer {
+    padding: 1.5rem 0.2rem;
+  }
+  
+  .loginCard {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .welcomeTitle {
+    font-size: 1.8rem;
+  }
+  
+  .welcomeSubtitle {
+    font-size: 1rem;
+  }
+  
+  .loginTitle {
+    font-size: 1.5rem;
+  }
+  
+  .tabButton {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .formInput {
+    padding: 0.625rem 0.875rem;
+  }
+  
+  .loginButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .particle {
+    display: none;
+  }
+} 

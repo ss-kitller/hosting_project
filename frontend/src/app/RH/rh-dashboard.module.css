@@ -1,0 +1,231 @@
+/* Container principal du dashboard */
+.dashboardContainer {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 120px);
+}
+
+/* En-tête du dashboard */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0 0 1rem 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* Grille des cartes */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Carte individuelle */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 120px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Icône de la carte */
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Couleurs spécifiques pour chaque carte */
+.card:nth-child(1) .cardIcon {
+  background: linear-gradient(135deg, #005baa 0%, #003366 100%);
+}
+
+.card:nth-child(2) .cardIcon {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.card:nth-child(3) .cardIcon {
+  background: linear-gradient(135deg, #6f42c1 0%, #5a2d91 100%);
+}
+
+.card:nth-child(4) .cardIcon {
+  background: linear-gradient(135deg, #fd7e14 0%, #e55a00 100%);
+}
+
+.card:nth-child(5) .cardIcon {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+}
+
+/* Contenu de la carte */
+.cardContent {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6c757d;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0 0 0.25rem 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  line-height: 1;
+}
+
+.cardLabel {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.footerText {
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* États de chargement */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e3f2fd;
+  border-top: 4px solid #005baa;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    min-height: 100px;
+  }
+  
+  .cardIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .cardNumber {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardContainer {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .cardIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  
+  .cardNumber {
+    font-size: 1.8rem;
+  }
+} 

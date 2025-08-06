@@ -1,0 +1,293 @@
+/* Overlay de la modale */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Modale principale */
+.modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* En-tête de la modale */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e9ecef;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modalIcon {
+  font-size: 1.5rem;
+  color: #005baa;
+}
+
+.modalTitle h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a365d;
+  margin: 0;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.closeButton:hover {
+  background: #e9ecef;
+  color: #495057;
+  transform: scale(1.05);
+}
+
+/* Informations du chef d'escale (pour la modification) */
+.chefInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-bottom: 1px solid #90caf9;
+}
+
+.chefId {
+  font-size: 0.9rem;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.chefName {
+  font-size: 1.1rem;
+  color: #1a365d;
+  font-weight: 600;
+}
+
+/* Message d'erreur */
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  color: #c62828;
+  border-bottom: 1px solid #ef9a9a;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Formulaire */
+.form {
+  padding: 2rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a365d;
+}
+
+.input,
+.select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #495057;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #005baa;
+  box-shadow: 0 0 0 3px rgba(0, 91, 170, 0.1);
+}
+
+.input::placeholder {
+  color: #adb5bd;
+}
+
+.select {
+  cursor: pointer;
+}
+
+/* Actions du formulaire */
+.formActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.cancelButton {
+  padding: 0.75rem 1.5rem;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.cancelButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #005baa 0%, #003366 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 91, 170, 0.3);
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 91, 170, 0.4);
+  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Spinner de chargement */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+  
+  .modalHeader {
+    padding: 1rem 1.5rem;
+  }
+  
+  .modalTitle h2 {
+    font-size: 1.2rem;
+  }
+  
+  .form {
+    padding: 1.5rem;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+  
+  .submitButton,
+  .cancelButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 0.5rem;
+  }
+  
+  .modal {
+    margin: 0.5rem;
+  }
+  
+  .modalHeader {
+    padding: 1rem;
+  }
+  
+  .form {
+    padding: 1rem;
+  }
+  
+  .chefInfo {
+    padding: 1rem;
+  }
+} 

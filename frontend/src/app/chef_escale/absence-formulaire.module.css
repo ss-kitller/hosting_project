@@ -1,0 +1,88 @@
+.formContainer {
+  max-width: 520px;
+  margin: 100px auto 2.5rem auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 32, 96, 0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+.formTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+.formGroup {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.formLabel {
+  font-weight: 600;
+  color: #005baa;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.formInput, .formSelect, .formRadioGroup, .formTextarea {
+  border: 1.5px solid #e6eaf3;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: #fafdff;
+  color: #2a3a4a;
+  outline: none;
+  transition: border 0.15s;
+}
+.formInput:focus, .formSelect:focus, .formTextarea:focus {
+  border-color: #005baa;
+}
+.formRadioGroup {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.formRadioLabel {
+  font-size: 1rem;
+  color: #003366;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.formSwitch {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.submitBtn {
+  width: 100%;
+  background: #005baa;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.9rem 0;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  transition: background 0.15s;
+  box-shadow: 0 2px 8px rgba(0,32,96,0.08);
+}
+.submitBtn:hover {
+  background: #003366;
+}
+@media (max-width: 700px) {
+  .formContainer {
+    padding: 1.2rem 0.5rem;
+    margin: 70px 0 1.5rem 0;
+  }
+  .formTitle {
+    font-size: 1.1rem;
+  }
+} 

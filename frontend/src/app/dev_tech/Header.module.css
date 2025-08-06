@@ -1,0 +1,64 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 32, 96, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  z-index: 100;
+}
+.left {
+  display: flex;
+  align-items: center;
+}
+.logoText {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #003366;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 0.02em;
+}
+.right {
+  display: flex;
+  align-items: center;
+}
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f2f6fa;
+  color: #005baa;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+}
+.logoutBtn:hover {
+  background: #e6eaf3;
+  color: #003366;
+}
+.logoutIcon {
+  font-size: 1.25rem;
+}
+@media (max-width: 700px) {
+  .header {
+    padding: 0 0.7rem;
+    height: 52px;
+  }
+  .logoText {
+    font-size: 1.05rem;
+  }
+  .logoutBtn {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.7rem;
+  }
+} 

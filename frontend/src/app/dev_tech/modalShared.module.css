@@ -1,0 +1,101 @@
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #0006;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInBg 0.25s;
+}
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.modalContent {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 32, 96, 0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  animation: modalAppear 0.3s cubic-bezier(.4,0,.2,1);
+}
+@keyframes modalAppear {
+  from { transform: translateY(40px) scale(0.98); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.formTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.formGroup, .formRow {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.formLabel {
+  font-weight: 600;
+  color: #005baa;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.formInput, .formSelect, .formTextarea {
+  border: 1.5px solid #e6eaf3;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: #fafdff;
+  color: #2a3a4a;
+  outline: none;
+  transition: border 0.15s;
+}
+.formInput:focus, .formSelect:focus, .formTextarea:focus {
+  border-color: #005baa;
+}
+.formActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+}
+.submitBtn, .addBtn {
+  background: #005baa;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.9rem 1.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  box-shadow: 0 2px 8px rgba(0,32,96,0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.submitBtn:hover, .addBtn:hover {
+  background: #003366;
+}
+.cancelBtn {
+  background: #eaf2fb;
+  color: #005baa;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.9rem 1.8rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cancelBtn:hover {
+  background: #dbe9fa;
+} 

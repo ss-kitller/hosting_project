@@ -1,0 +1,104 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f9f9f9 0%, #e3f2fd 100%);
+  padding: 2rem;
+}
+
+.content {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.title {
+  color: #1E2A38;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.message {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.backButton,
+.homeButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.backButton {
+  background-color: #cfd8dc;
+  color: #1E2A38;
+}
+
+.backButton:hover {
+  background-color: #b0bec5;
+}
+
+.homeButton {
+  background-color: #1976D2;
+  color: white;
+}
+
+.homeButton:hover {
+  background-color: #1565c0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .content {
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .message {
+    font-size: 1rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .backButton,
+  .homeButton {
+    width: 100%;
+  }
+} 
